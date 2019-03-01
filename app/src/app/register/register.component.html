@@ -1,0 +1,30 @@
+<h4>REGISTER</h4>
+
+
+<form #regForm="ngForm"  (ngSubmit)="register(regForm.value)">
+	
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" ngModel class="form-control" name="name" #name="ngModel" required>
+		<div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+			Name is required.
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" ngModel class="form-control" name="password" #password="ngModel" required>
+		<div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+			Password is required.
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="confirmPassword">Confirm password</label>
+		<input type="password" ngModel class="form-control" name="confirmPassword" #confirmPassword="ngModel" required>
+		<div class="alert alert-danger" *ngIf="confirmPassword.touched && confirmPassword.invalid">
+			Confirm password is required.
+		</div>
+	</div>
+	<div class="form-group">
+		<input type="submit" value="Submit" class="btn btn-primary" [disabled]="!regForm.valid">
+	</div>
+</form>

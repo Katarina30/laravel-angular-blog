@@ -1,0 +1,10 @@
+<a href="/posts" class="btn btn-primary"><i class="fa fa-backward"></i> Back</a>
+
+<h2> {{post.title}} </h2>
+<p>Written by {{post.user.name}} on {{post.created_at | date : 'dd.MM.yyyy'}}</p>
+ <div> {{post.description}} </div>
+ 
+
+<button *ngIf="this.currentUser && (this.currentUser.id == post.user_id)" class=" btn btn-dark"> <a routerLink="/posts/{{post.id}}/edit" > Edit post </a></button>
+
+<button *ngIf="this.currentUser && (this.currentUser.id == post.user_id)" class=" btn btn-danger "> <a routerLink="/posts/{{post.id}}"> Delete post </a></button>

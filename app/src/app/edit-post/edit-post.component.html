@@ -1,0 +1,18 @@
+<a href="/posts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
+<h4> Edit post</h4>
+
+
+<form #editForm="ngForm"  (ngSubmit)="updatePost(editForm.value)">
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="text" [(ngModel)]="post.title" class="form-control" name="title">
+	</div>
+	<div class="form-group">
+		<label for="description">Title</label>
+		<textarea [(ngModel)]="post.description" class="form-control" name="description"></textarea>
+	</div>
+	
+	<div class="form-group">
+		<input type="submit" value="Submit" >
+	</div>
+</form>

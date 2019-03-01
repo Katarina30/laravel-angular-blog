@@ -1,0 +1,24 @@
+<h4> Add post</h4>
+
+
+<form #addForm="ngForm"  (ngSubmit)="createPost(addForm.value)">
+	
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="text" ngModel class="form-control" name="title" #title="ngModel" required>
+		<div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+			Title is required.
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea ngModel #description="ngModel" class="form-control" name="description" required></textarea>
+		<div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+			Description is required.
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<input type="submit" value="Submit" >
+	</div>
+</form>

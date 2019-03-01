@@ -1,0 +1,14 @@
+<a href="/dashboard" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
+<button *ngIf="this.currentUser" class="btn btn-light"> <a routerLink="/posts/create"> Add post </a></button>
+
+<h3>Posts</h3>
+ <div class="card card-body mb-3"*ngFor="let post of posts">
+  	          
+         <h4 class="card-title">{{post.title}}</h4>
+         <p>Written by {{post.user.name}} on {{post.created_at | date : 'dd.MM.yyyy'}}</p>
+         <p class="card-text">{{post.description}}</p>
+         <a routerLink="/list/{{post.id}}" class="btn btn-dark" >
+         	 More
+        </a>
+   
+</div>
